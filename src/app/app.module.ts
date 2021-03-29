@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ListUserComponent } from './user/list-user/list-user.component';
+import { ListEmployeeComponent } from './employee/list-employee/list-employee.component';
 import { LoginComponent } from './login/login.component';
-import { AddUserComponent } from './user/add-user/add-user.component';
-import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
 import {routing} from "./app.routing";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ApiService} from "./service/api.service";
@@ -15,10 +15,10 @@ import {TokenInterceptor} from "./core/interceptor";
 @NgModule({
   declarations: [
     AppComponent,
-    ListUserComponent,
+    ListEmployeeComponent,
     LoginComponent,
-    AddUserComponent,
-    EditUserComponent
+    AddEmployeeComponent,
+    EditEmployeeComponent
   ],
   imports: [
     BrowserModule,

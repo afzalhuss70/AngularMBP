@@ -2,17 +2,17 @@ import { Component, OnInit , Inject} from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {first} from "rxjs/operators";
-import {User} from "../../model/user.model";
+import {Employee} from "../../model/employee.model";
 import {ApiService} from "../../service/api.service";
 
 @Component({
-  selector: 'app-edit-user',
-  templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.css']
+  selector: 'app-edit-employee',
+  templateUrl: './edit-employee.component.html',
+  styleUrls: ['./edit-employee.component.css']
 })
-export class EditUserComponent implements OnInit {
+export class EditEmployeeComponent implements OnInit {
 
-  user: User;
+  user: Employee;
   editForm: FormGroup;
   constructor(private formBuilder: FormBuilder,private router: Router, private apiService: ApiService) { }
 
@@ -20,7 +20,7 @@ export class EditUserComponent implements OnInit {
     let userId = window.localStorage.getItem("editUserId");
     if(!userId) {
       alert("Invalid action.")
-      this.router.navigate(['list-user']);
+      this.router.navigate(['list-employee']);
       return;
     }
     this.editForm = this.formBuilder.group({
@@ -43,8 +43,8 @@ export class EditUserComponent implements OnInit {
       .subscribe(
         data => {
           if(data.status === 200) {
-            alert('User updated successfully.');
-            this.router.navigate(['list-user']);
+            alert('Employee updated successfully.');
+            this.router.navigate(['list-employee']);
           }else {
             alert(data.message);
           }

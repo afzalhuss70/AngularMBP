@@ -4,11 +4,11 @@ import {Router} from "@angular/router";
 import {ApiService} from "../../service/api.service";
 
 @Component({
-  selector: 'app-add-user',
-  templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css']
+  selector: 'app-add-employee',
+  templateUrl: './add-employee.component.html',
+  styleUrls: ['./add-employee.component.css']
 })
-export class AddUserComponent implements OnInit {
+export class AddEmployeeComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,private router: Router, private apiService: ApiService) { }
 
@@ -30,7 +30,7 @@ export class AddUserComponent implements OnInit {
   onSubmit() {
     this.apiService.createUser(this.addForm.value)
       .subscribe( data => {
-        this.router.navigate(['list-user']);
+        this.router.navigate(['list-employee']);
       });
   }
 

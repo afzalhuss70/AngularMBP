@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {User} from "../model/user.model";
+import {Employee} from "../model/employee.model";
 import {Observable} from "rxjs/index";
 import {ApiResponse} from "../model/api.response";
 
@@ -22,11 +22,11 @@ export class ApiService {
     return this.http.get<ApiResponse>(this.baseUrl + id);
   }
 
-  createUser(user: User): Observable<ApiResponse> {
+  createUser(user: Employee): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(this.baseUrl, user);
   }
 
-  updateUser(user: User): Observable<ApiResponse> {
+  updateUser(user: Employee): Observable<ApiResponse> {
     return this.http.put<ApiResponse>(this.baseUrl + user.id, user);
   }
 
